@@ -10,7 +10,7 @@ const Formulario = () => {
     })
 
     const { categorias } = useContext( CategoriaContext )
-    const { buscarReceta } = useContext( RecetasContext )
+    const { buscarReceta, setConsultar } = useContext( RecetasContext )
 
     const handleChange = (e) => {
         
@@ -26,6 +26,7 @@ const Formulario = () => {
         onSubmit={e => {
             e.preventDefault()
             buscarReceta(busqueda)
+            setConsultar(true)
         }}
         >
             <fieldset className="text-center">
